@@ -1,18 +1,17 @@
-"""Turn the tidy metrics frame into the dashboard view."""
+
 from __future__ import annotations
 
 import numpy as np
 import pandas as pd
 import streamlit as st
 
-PANELS = [  # (section, title) — laid out two per row
+PANELS = [  
     ("equities", "Equities"),
     ("rates", "Rates"),
     ("credit", "Credit"),
     ("cross_asset", "Cross-asset"),
 ]
 
-# Top strip: (series_id, label, delta_color). "inverse" = rising is bad for risk.
 STATE_STRIP = [
     ("VIXCLS", "VIX", "inverse"),
     ("BAMLH0A0HYM2", "HY OAS", "inverse"),
@@ -20,8 +19,8 @@ STATE_STRIP = [
     ("T10Y2Y", "10Y–2Y", "off"),
 ]
 
-Z_WINDOW = 60      # trailing observations for the "what moved" z-score
-SPARK_WINDOW = 60  # observations shown in each sparkline
+Z_WINDOW = 60      
+SPARK_WINDOW = 60 
 
 
 # ---------------------------------------------------------------- calculations

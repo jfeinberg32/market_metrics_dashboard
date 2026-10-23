@@ -10,7 +10,6 @@ st.set_page_config(page_title="Market Dashboard", page_icon="📈", layout="wide
 
 @st.cache_data(ttl=3600, show_spinner="Pulling market data…")
 def load():
-    # Capture validate()'s warnings so they show in the UI, not just the terminal.
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter("always")
         df = get_metrics()
