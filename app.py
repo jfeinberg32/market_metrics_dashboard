@@ -1,17 +1,21 @@
-import datetime as dt
+import warnings
+
 import streamlit as st
-from get_metrics import get_metrics 
+
 from format_metrics import render
+from get_metrics import get_metrics
 
-@st.cache_data
-def load(day: dt.date):
-    return get_metrics()
+st.set_page_config(page_title="Market Dashboard", page_icon="📈", layout="wide")
 
-raw = load(dt.date.today())
-render(raw, as_of="Oct 5, 2026")
 
-#data = load(dt.date.today())
-#st.title(f"Market Metrics — {dt.date.today()}")
+@st.cache_data(ttl=3600, show_spinner="Pulling market data…")
+def load():
+    # Capture validate()'s warnings so they show in the UI, not just the terminal.
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        df = get_metrics()
+    return df, [str(w.message) for w in caught]
 
-#st.subheader("Weekly Metrics")
-#st.table(data)
+
+df, data_warnings = load()
+render(df, data_warnings)
