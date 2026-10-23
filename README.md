@@ -1,4 +1,4 @@
-# Markets Metrics Dashboard
+# Markets Metric Dashboard
 
 A one-page Streamlit dashboard that shows the day's market state: equities, rates, credit, and cross-asset metrics, with levels, recent changes, and how unusual each move was.
 
