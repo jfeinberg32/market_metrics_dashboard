@@ -10,6 +10,8 @@ PANELS = [
     ("rates", "Rates"),
     ("credit", "Credit"),
     ("cross_asset", "Cross-asset"),
+    ("crypto", "Crypto"),
+    ("commodities", "Commodities")
 ]
 
 STATE_STRIP = [
