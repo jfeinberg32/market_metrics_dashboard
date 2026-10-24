@@ -31,6 +31,7 @@ FRED_SERIES = {
     "BAMLH0A3HYC":  {"section": "credit",      "metric": "CCC OAS",            "unit": "bps",   "scale": 100},
     "DTWEXBGS":     {"section": "cross_asset", "metric": "Broad dollar index", "unit": "index", "scale": 1},
     "DCOILWTICO":   {"section": "cross_asset", "metric": "WTI crude",          "unit": "usd",   "scale": 1},
+    "MORTGAGE30US":  {"section": "cross_asset", "metric": "30Y mortgage",       "unit": "pct",   "scale": 1},
 }
 
 YF_SERIES = {
@@ -38,6 +39,8 @@ YF_SERIES = {
     "^NDX": {"section": "equities", "metric": "Nasdaq",       "unit": "index"},
     "^RUT":  {"section": "equities", "metric": "Russell 2000", "unit": "index"},
     "^DJI": {"section": "equities", "metric": "Dow", "unit": "index"},
+    "BTC-USD": {"section": "crypto", "metric": "Bitcoin", "unit": "usd"},
+    "GC=F": {"section": "commodities", "metric": "Gold 60 Days Futures", "unit": "usd"},
 }
  
 # Derived ratios: (numerator, denominator) -> metadata.
